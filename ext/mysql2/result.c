@@ -173,7 +173,7 @@ static VALUE mysql2_set_field_string_encoding(VALUE val, MYSQL_FIELD field, rb_e
     }
 
     if (default_internal_enc) {
-      val = rb_str_export_to_enc(val, default_internal_enc);
+      val = rb_str_force_encoding(val, default_internal_enc);
     }
   }
   return val;
